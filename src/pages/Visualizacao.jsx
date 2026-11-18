@@ -1,8 +1,9 @@
-// Visualização: recebe "title" (constante) e "filmes" (estado) vindos do App.
+// Visualização: recebe "title" (constante), "filmes" (estado) e
+// "removerRegistro" (função criada no App) por props.
 // Formato C = 4: lista em ordem alfabética pelo título.
 import { Link } from 'react-router-dom'
 
-function Visualizacao({ title, filmes }) {
+function Visualizacao({ title, filmes, removerRegistro }) {
   // Ordeno uma cópia do array para não alterar o estado original
   const ordenados = [...filmes].sort((a, b) =>
     a.titulo.localeCompare(b.titulo, 'pt-BR')
@@ -20,7 +21,9 @@ function Visualizacao({ title, filmes }) {
         <ul className="lista">
           {ordenados.map((f) => (
             <li key={f.id}>
-              <strong>{f.titulo}</strong> — {f.duracao} min — {f.genero} — {f.sala}
+              <strong>{f.titulo}</strong> — {f.duracao} min — {f.genero} — {f.sala}{' '}
+              {/* chama a função do App passando o id deste filme */}
+              <button onClick={() => removerRegistro(f.id)}>Remover</button>
             </li>
           ))}
         </ul>

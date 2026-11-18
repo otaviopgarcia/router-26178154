@@ -26,6 +26,12 @@ function App() {
     setFilmes([...filmes, novoFilme])
   }
 
+  // O3: remove o filme com o id recebido.
+  // filter devolve um array novo só com os filmes de id diferente.
+  function removerRegistro(id) {
+    setFilmes(filmes.filter((f) => f.id !== id))
+  }
+
   return (
     <div className="app">
       <Navbar />
@@ -34,7 +40,16 @@ function App() {
           {/* quantidade calculada aqui e enviada para a Home */}
           <Route path="/" element={<Home quantidade={filmes.length} />} />
           <Route path="/filmes/novo" element={<Cadastro adicionarRegistro={adicionarRegistro} />} />
-          <Route path="/filmes" element={<Visualizacao title={TITULO_LISTA} filmes={filmes} />} />
+          <Route
+            path="/filmes"
+            element={
+              <Visualizacao
+                title={TITULO_LISTA}
+                filmes={filmes}
+                removerRegistro={removerRegistro}
+              />
+            }
+          />
           {/* rota coringa: qualquer caminho que não existe */}
           <Route path="*" element={<NaoEncontrada />} />
         </Routes>
