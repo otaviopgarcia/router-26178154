@@ -1,0 +1,27 @@
+:root { --cor-principal: hsl(154, 60%, 35%); }
+
+* { box-sizing: border-box; }
+body { margin: 0; font-family: Arial, sans-serif; background: #f4f6f5; color: #222; }
+
+.app { min-height: 100vh; display: flex; flex-direction: column; }
+
+/* Navbar horizontal no topo, links centralizados (D = 0) */
+.navbar { display: flex; justify-content: center; gap: 8px; padding: 12px; background: var(--cor-principal); }
+.link { color: #fff; text-decoration: none; padding: 8px 16px; border-radius: 6px; }
+.link:hover { background: rgba(255, 255, 255, 0.2); }
+.link.ativo { background: #fff; color: var(--cor-principal); font-weight: bold; }
+
+.conteudo { flex: 1; max-width: 720px; width: 100%; margin: 0 auto; padding: 24px 16px; }
+h1 { color: var(--cor-principal); }
+.destaque { font-size: 1.2rem; font-weight: bold; }
+
+form { display: flex; flex-direction: column; gap: 14px; }
+label { display: flex; flex-direction: column; gap: 4px; font-weight: bold; }
+input, select { padding: 8px; font-size: 1rem; border: 1px solid #bbb; border-radius: 6px; }
+button { padding: 10px; font-size: 1rem; background: var(--cor-principal); color: #fff; border: 0; border-radius: 6px; cursor: pointer; }
+.erro { color: #b00020; font-weight: normal; font-size: 0.9rem; }
+
+.lista { padding-left: 20px; line-height: 1.8; }
+a { color: var(--cor-principal); }
+
+.rodape { text-align: center; padding: 14px; background: var(--cor-principal); color: #fff; }
