@@ -26,4 +26,4 @@ npm run dev
 
 ## Opcionais feitos
 
-Nenhum até o momento.
+O3 - Remover
